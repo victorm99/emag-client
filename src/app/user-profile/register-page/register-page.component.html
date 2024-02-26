@@ -1,0 +1,34 @@
+<section class="section">
+  <img src="assets/images/background.png">
+</section>
+  <mat-card>
+    <mat-card-title class="title">REGISTER</mat-card-title>
+    <mat-card-content class="content">
+      <form [formGroup]="registerForm">
+        <mat-form-field appearance="outline">
+          <input matInput [(ngModel)]="userModel.fullName" formControlName="fullName">
+          <mat-label>Full name</mat-label>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <input matInput type="password" [(ngModel)]="userModel.password" formControlName="password">
+          <mat-label>Password</mat-label>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <input matInput type="password" [(ngModel)]="userModel.confirmPassword" formControlName="confirmPassword">
+          <mat-label>Confirm Password</mat-label>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <input matInput type="email" [(ngModel)]="userModel.email" formControlName="email">
+          <mat-label>Email</mat-label>
+        </mat-form-field>
+
+      </form>
+      <button (click)="register(userModel)">Register</button>
+    </mat-card-content>
+  </mat-card>
+
+
+

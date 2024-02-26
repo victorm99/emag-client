@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.mat-icon-button + .mat-datepicker-input-container {
+  float: left !important;
+  margin-top: 7px !important;
+}
+
+.snackbar-error {
+  background: #b00020;
+  color: white;
+}
+
+.snackbar-success {
+  background: #088030;
+  color: white;
+}
+
+.mat-snack-bar-container {
+  text-align: center;
+}
+
+.mat-simple-snackbar {
+  display: inline-block !important;
+}
+
+.title {
+  margin-bottom: 40px !important;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #1c8aac !important;
+}
+
+.mat-focused .mat-form-field-label {
+  color: #1c8aac !important;
+}
+
+.mat-form-field-outline-start {
+  border-radius: 28px 0 0 28px !important;
+  min-width: 28px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-flex {
+  padding: 0 0.75em 0 0.75em;
+  width: 370px !important;
+  margin-top: -0.25em;
+  position: relative;
+}
+
+.mat-form-field-outline-end {
+  border-radius: 0 28px 28px 0 !important;
+}
+
+.mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.9em !important;
+}
+
+.mat-focused .mat-form-field-label {
+  margin-top: -1px !important;
+  margin-left: 24px !important;
+}
+
+.mat-form-field-label {
+  top: 26px !important;
+  margin-left: 22px;
+}
+
+.mat-tab-group {
+  display: flex !important;
+  align-items: center;
+}
+
+button {
+  background: #0082e6 !important;
+  border: 1px solid #99a0ba;
+  border-radius: 20px !important;
+  align-items: center;
+  padding: 8px;
+}
+
+.mat-icon-button {
+  background: transparent !important;
+}
+
+.mat-calendar-period-button {
+  min-width: 0;
+  background: transparent !important;
+}
+
+button:disabled {
+  border: none !important;
+}
+
+.mat-card {
+  background: linear-gradient(
+    119.23deg,
+    rgba(255, 255, 255, 0.7) 16.98%,
+    rgba(255, 255, 255, 0.1) 92.15%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2) !important;
+  border-radius: 20px;
+}
+/*.mat-form-field-flex > .mat-form-field-infix {*/
+/*  padding: 0.3em 0 !important;*/
+/*}*/

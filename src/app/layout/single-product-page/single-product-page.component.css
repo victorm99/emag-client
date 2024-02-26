@@ -1,0 +1,35 @@
+.product-container {
+  padding: 100px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  color: white;
+}
+
+
+mat-card-footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.review {
+  margin-top: 20px;
+}
+
+mat-card-content {
+  margin-top: 10px;
+}
+
+mat-card-header {
+  padding: 10px;
+}
+
+.mat-card-header-text {
+  margin: 0 !important;
+}

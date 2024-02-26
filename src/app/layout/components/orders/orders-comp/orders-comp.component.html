@@ -1,0 +1,32 @@
+<h1>Orders</h1>
+<mat-card>
+    <mat-table [dataSource]="dataSource">
+      <!-- Product Name Column -->
+      <ng-container matColumnDef="productName">
+        <mat-header-cell *matHeaderCellDef> Product Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.productName}} </mat-cell>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+      </ng-container>
+
+      <!-- Quantity Column -->
+      <ng-container matColumnDef="quantity">
+        <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.quantity}} </mat-cell>
+      </ng-container>
+
+      <!-- Created At Column -->
+      <ng-container matColumnDef="createdAt">
+        <mat-header-cell *matHeaderCellDef> Created At </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.createdAt}} </mat-cell>
+      </ng-container>
+
+      <!-- Define the columns in the table -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</mat-card>

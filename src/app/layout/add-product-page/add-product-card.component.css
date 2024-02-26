@@ -1,0 +1,33 @@
+mat-form-field {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+form {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 11px;
+  color: #fff;
+  position: relative;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 21px;
+}
+
+button:first-child {
+  margin-right: 5px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}

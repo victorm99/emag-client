@@ -1,0 +1,22 @@
+<section class="section">
+  <img src="assets/images/background.png">
+</section>
+  <mat-card>
+    <mat-card-title class="title">LOGIN</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="loginFormGroup">
+        <mat-form-field appearance="outline">
+          <input matInput [(ngModel)]="loginModel.email" formControlName="email">
+          <mat-label>Email</mat-label>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <input matInput type="password" [(ngModel)]="loginModel.password" formControlName="password">
+          <mat-label>Password</mat-label>
+        </mat-form-field>
+      </form>
+      <button (click)="login(loginModel)">Login</button>
+      <mat-card-subtitle class="forgotten-password" routerLink="/forgotten-password">Forgotten Password</mat-card-subtitle>
+      <mat-card-subtitle routerLink="/register" class="register">Register</mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>

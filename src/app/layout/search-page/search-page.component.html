@@ -1,0 +1,8 @@
+<app-top-navigation></app-top-navigation>
+<h1>Products</h1>
+<div class="product-container">
+  <app-product-card
+    *ngFor="let product of products | async"
+    [product]="product">
+  </app-product-card>
+</div>

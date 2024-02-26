@@ -1,0 +1,63 @@
+section {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card {
+  border-radius: 20px;
+  margin:30px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+span {
+  margin-top: 5px;
+}
+
+.user {
+  width: 5%;
+}
+
+.user-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.change-password {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+mat-card-subtitle {
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 11px;
+  color: #fff;
+  position: relative;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 21px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 140px;
+  margin: auto;
+}

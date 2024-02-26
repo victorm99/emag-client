@@ -1,0 +1,75 @@
+mat-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 410px;
+  height: 500px;
+  background: linear-gradient(119.23deg, rgba(255, 255, 255, 0.7) 16.98%, rgba(255, 255, 255, 0.1) 92.15%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2) !important;
+  border-radius: 20px;
+}
+
+.section {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+
+.section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.register {
+  padding-top: 0;
+}
+
+button {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 11px;
+  color: #fff;
+  position: relative;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 21px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+mat-card-subtitle {
+  padding-top: 20px;
+  text-align: center;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+  height: 200px;
+}

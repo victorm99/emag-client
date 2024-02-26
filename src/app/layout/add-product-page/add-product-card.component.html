@@ -1,0 +1,57 @@
+<mat-tab-group>
+  <mat-tab label="Product">
+    <form [formGroup]="productForm">
+      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="model.name" formControlName="name">
+        <mat-label>Name</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-select [(ngModel)]="model.subCategoryId" formControlName="subCategoryId">
+          <mat-option *ngFor=" let det of subCategories | async" [value]="det.id">{{det.subcategoryName}}</mat-option>
+        </mat-select>
+        <mat-label>Subcategory</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="model.brand" formControlName="brand">
+        <mat-label>Brand</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="model.model" formControlName="model">
+        <mat-label>Model</mat-label>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="model.price" formControlName="price">
+        <mat-label>Price</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="model.quantity" formControlName="quantity">
+        <mat-label>Quantity</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="model.description" formControlName="description">
+        <mat-label>Description</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="model.warrantyMonths" formControlName="warrantyMonths">
+        <mat-label>Warranty Months</mat-label>
+      </mat-form-field>
+      <div>
+        <button (click)="addProduct(model)">Add</button>
+        <button (click)="editProduct(model)">Edit</button>
+      </div>
+
+    </form>
+  </mat-tab>
+  <mat-tab label="Discount">
+    <app-discount-component></app-discount-component>
+  </mat-tab>
+</mat-tab-group>
+

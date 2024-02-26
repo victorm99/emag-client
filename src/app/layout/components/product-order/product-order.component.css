@@ -1,0 +1,47 @@
+:host {
+  width: 18%;
+  margin: 1%;
+}
+
+.edit-option {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+}
+
+.product-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product-card-image {
+  margin: 0 !important;
+  margin-right: 16px !important;
+}
+
+.product-card-title {
+  font-size: 3em !important;
+  text-align: center;
+}
+.product-card-description {
+  margin-bottom: 10px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.product-card-price {
+  color: #088030;
+}
+
+.product-card-price,
+.product-card-rating {
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  font-weight: bold;
+}

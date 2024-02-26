@@ -1,0 +1,32 @@
+<mat-card class="product-card">
+  <img
+    class="product-card-image"
+    mat-card-image
+    src="https://picsum.photos/200/300?random={{ product.id }}"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-content class="product-content">
+    <mat-card-title class="product-card-title">{{
+      product.name
+    }}</mat-card-title>
+    <span class="product-card-price">
+      Price:<br />
+      <s *ngIf="product.discountedPrice" style="color: red">
+        {{ product.price | currency }} <br />
+      </s>
+
+      <ng-container *ngIf="!product.discountedPrice">
+        {{ product.price | currency }} <br />
+      </ng-container>
+
+      {{ product.discountedPrice | currency }}
+    </span>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="removeFromCart(product.id)"
+    >
+      <mat-icon class="person-icon">remove_shopping_cart</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>

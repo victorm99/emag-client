@@ -1,0 +1,74 @@
+<mat-card class="product-card">
+  <img
+    class="product-card-image"
+    mat-card-image
+    src="https://picsum.photos/200/300?random={{ product.id }}"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-content class="product-content">
+    <button
+      mat-raised-button
+      color="primary"
+      class="edit-option"
+      [routerLink]="['/product/edit', product.id]"
+      *ngIf="isAdmin"
+    >
+      <mat-icon class="person-icon">edit</mat-icon>
+    </button>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="delete-option"
+      (click)="delete(product.id)"
+      *ngIf="isAdmin"
+    >
+      <mat-icon class="person-icon">delete</mat-icon>
+    </button>
+
+    <mat-card-title
+      class="product-card-title"
+      [routerLink]="['/product', product.id]"
+      ><h1>
+        {{ product.name }}
+      </h1>
+      <hr />
+      {{ product.model }} - {{ product.brand }}</mat-card-title
+    >
+    <div class="product-card-description">
+      {{ product.description }}
+    </div>
+    <div class="product-card-specials">
+      <span class="product-card-rating"
+        >Rating: {{ product.productRating }}</span
+      >
+      <span class="product-card-price">
+        Price:
+        <s *ngIf="product.discountedPrice" style="color: red">
+          {{ product.price | currency }} <br />
+        </s>
+
+        <ng-container *ngIf="!product.discountedPrice">
+          {{ product.price | currency }} <br />
+        </ng-container>
+
+        {{ product.discountedPrice | currency }}
+      </span>
+      <button mat-raised-button color="primary" (click)="addToCart(product.id)">
+        <mat-icon class="person-icon">{{
+          isCartPage ? "remove_shopping_cart" : "shopping_cart"
+        }}</mat-icon>
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="fav(product.id)"
+        *ngIf="!isCartPage"
+      >
+        <mat-icon class="person-icon">{{
+          isFavPage ? "favorite_border" : "favorite"
+        }}</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

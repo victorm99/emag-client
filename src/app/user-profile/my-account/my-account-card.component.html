@@ -1,0 +1,68 @@
+<div>
+  <img src="assets/images/user.png" class="user" alt="">
+  <span>{{loggedUser.fullName}}</span>
+</div>
+<section>
+  <mat-card>
+    <mat-card-subtitle>Edit User Details</mat-card-subtitle>
+    <mat-card-content>
+      <form class="user-details" [formGroup]="userDetailsFormGroup">
+        <mat-form-field appearance="outline">
+          <input matInput [(ngModel)]="userDataModel.email" formControlName="email">
+          <mat-label>Email</mat-label>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <input matInput [(ngModel)]="userDataModel.nickname" formControlName="username">
+          <mat-label>Username</mat-label>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Birth Date</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="userDataModel.birthDate" formControlName="birthDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <input matInput [(ngModel)]="userDataModel.gender" formControlName="gender">
+          <mat-label>Gender</mat-label>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <input matInput [(ngModel)]="userDataModel.mobilePhone" formControlName="mobilePhone">
+          <mat-label>Phone Number</mat-label>
+        </mat-form-field>
+        <button (click)="changeUserData(userDataModel)">Save</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-subtitle>Edit User Password</mat-card-subtitle>
+    <mat-card-content>
+      <form class="change-password" [formGroup]="userDetailsFormGroup">
+        <mat-form-field appearance="outline">
+          <input matInput type="password" formControlName="password" [(ngModel)]="passwordModel.oldPassword">
+          <mat-label>Old Password</mat-label>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input matInput type="password" formControlName="newPassword" [(ngModel)]="passwordModel.newPassword">
+          <mat-label>New Password</mat-label>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input matInput type="password" formControlName="confirmNewPassword" [(ngModel)]="passwordModel.confirmNewPassword">
+          <mat-label>Confirm New Password</mat-label>
+        </mat-form-field>
+        <button (click)="changePassword(passwordModel)">Change password</button>
+      </form>
+
+
+    </mat-card-content>
+
+  </mat-card>
+
+</section>
+<div class="actions">
+  <button *ngIf="userService.isLogged && !userService.isSubscribed" (click)="subscribe()">Subscribe</button>
+  <button *ngIf="userService.isLogged && userService.isSubscribed" (click)="unsubscribe()">Unsubscribe</button>
+</div>

@@ -1,0 +1,16 @@
+<section>
+  <mat-form-field appearance="outline">
+    <input matInput [(ngModel)]="model.discountPercent">
+    <mat-label>Discount, percent</mat-label>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Expire Date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="model.expireDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button (click)="_discount()">Make discount</button>
+</section>
+

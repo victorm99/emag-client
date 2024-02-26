@@ -1,0 +1,114 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <img src="assets/logo.png" alt="logo" />
+    <button [matMenuTriggerFor]="profileMenu" class="profile-button">
+      My account
+      <mat-icon class="person-icon">person</mat-icon>
+      <mat-menu #profileMenu="matMenu" class="profileMenu" xPosition="before">
+        <p *ngIf="isLogged" class="username">
+          You're logged as {{ loggedUser.fullName }}
+        </p>
+        <button
+          mat-menu-item
+          class="list-menu"
+          *ngIf="isLogged"
+          routerLink="/my-account"
+        >
+          My Account
+        </button>
+        <button
+          mat-menu-item
+          class="list-menu"
+          routerLink="/login"
+          *ngIf="!isLogged"
+        >
+          Login
+        </button>
+        <button
+          mat-menu-item
+          class="list-menu"
+          routerLink="/register"
+          *ngIf="!isLogged"
+        >
+          Sign Up
+        </button>
+        <button
+          mat-menu-item
+          class="list-menu"
+          *ngIf="isLogged"
+          (click)="signOut()"
+        >
+          Sign Out
+        </button>
+      </mat-menu>
+    </button>
+    <button class="profile-button" [routerLink]="['/favourites']">
+      Favourites
+      <mat-icon class="person-icon">favorite</mat-icon>
+    </button>
+    <button
+      class="profile-button"
+      *ngIf="userService._isAdmin()"
+      [routerLink]="['/product/add']"
+    >
+      Admin Panel
+      <mat-icon class="person-icon">admin_panel_settings</mat-icon>
+    </button>
+    <button class="profile-button" *ngIf="isLogged" [routerLink]="['/orders']">
+      Orders
+<!--      <mat-icon class="person-icon">quick_reorder</mat-icon>-->
+    </button>
+    <button class="profile-button" [routerLink]="['/cart']">
+      Cart
+      <mat-icon class="person-icon">shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button [matMenuTriggerFor]="menu">
+      Categories
+      <mat-icon>menu</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button
+          mat-menu-item
+          class="list-menu"
+          *ngFor="let category of categories | async"
+          [matMenuTriggerFor]="submenu"
+          (onMenuOpen)="openSubCategories(category.id)"
+        >
+          {{ category.name }}
+        </button>
+        <mat-menu #submenu="matMenu">
+          <button
+            mat-menu-item
+            class="list-menu"
+            *ngFor="let subcategory of subcategories | async"
+            [routerLink]="['/subcategory', subcategory.id]"
+          >
+            {{ subcategory.name }}
+          </button>
+        </mat-menu>
+      </mat-menu>
+    </button>
+
+    <button class="push-left pointer" routerLink="/filter">
+      <mat-icon matSuffix>filter_list</mat-icon>
+    </button>
+    <form class="search">
+      <mat-form-field>
+        <input
+          type="text"
+          id="keyword"
+          [(ngModel)]="searchValue"
+          name="keyword"
+          [value]="searchValue"
+          matInput
+          class="field"
+          placeholder="Search"
+        />
+      </mat-form-field>
+      <button (click)="search(searchValue)" class="pointer">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </mat-toolbar-row>
+</mat-toolbar>

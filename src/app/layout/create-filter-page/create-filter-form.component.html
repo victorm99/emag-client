@@ -1,0 +1,76 @@
+<mat-tab-group>
+  <mat-tab label="Product">
+    <form [formGroup]="productForm">
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          [(ngModel)]="model.searchKeyword"
+          formControlName="searchKeyword"
+        />
+        <mat-label>Search word</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="model.brand" formControlName="brand" />
+        <mat-label>Brand</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="model.model" formControlName="model" />
+        <mat-label>Model</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          [(ngModel)]="model.maxPrice"
+          formControlName="maxPrice"
+        />
+        <mat-label>Max Price</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          [(ngModel)]="model.minPrice"
+          formControlName="minPrice"
+        />
+        <mat-label>Min Price</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-select
+          [(ngModel)]="model.discountedOnly"
+          formControlName="discountedOnly"
+        >
+          <mat-option [value]="true">Yes</mat-option>
+          <mat-option [value]="false">no</mat-option>
+        </mat-select>
+        <mat-label>Discounted only</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-select
+          [(ngModel)]="model.orderByPrice"
+          formControlName="orderByPrice"
+        >
+          <mat-option [value]="true">Yes</mat-option>
+          <mat-option [value]="false">no</mat-option>
+        </mat-select>
+        <mat-label>Order by price</mat-label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-select [(ngModel)]="model.sortDesc" formControlName="sortDesc">
+          <mat-option [value]="true">Yes</mat-option>
+          <mat-option [value]="false">no</mat-option>
+        </mat-select>
+        <mat-label>Sort by name</mat-label>
+      </mat-form-field>
+
+      <div>
+        <button (click)="search(model)">Search</button>
+      </div>
+    </form>
+  </mat-tab>
+</mat-tab-group>

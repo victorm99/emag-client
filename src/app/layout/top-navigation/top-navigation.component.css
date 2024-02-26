@@ -1,0 +1,100 @@
+mat-toolbar-row:first-child {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+mat-toolbar-row:last-child {
+  background: rgb(53, 48, 139);
+  background: linear-gradient(
+    90deg,
+    rgba(53, 48, 139, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.list-menu {
+  color: black !important;
+}
+
+.mat-toolbar-row {
+  min-height: 50px !important;
+  height: 50px !important;
+}
+
+mat-icon {
+  color: white !important;
+}
+
+img {
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+}
+
+button {
+  display: flex;
+  color: white !important;
+  flex-direction: row-reverse;
+  background: transparent !important;
+  border: none;
+  justify-content: center;
+}
+
+p {
+  margin-left: 10px;
+  padding-top: 2px;
+}
+
+.search-field {
+  max-width: 650px;
+  width: 100%;
+}
+
+.profile-button {
+  color: black !important;
+  cursor: pointer;
+}
+
+.person-icon {
+  color: dodgerblue !important;
+}
+
+.username {
+  padding: 4px;
+  text-align: center;
+}
+
+.profileMenu {
+  text-align: center;
+}
+.push-left {
+  margin-left: auto;
+}
+.search {
+  color: white;
+  display: flex;
+}
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0 !important;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.field > .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0 !important;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

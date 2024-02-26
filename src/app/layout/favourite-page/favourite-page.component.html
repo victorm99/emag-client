@@ -1,0 +1,11 @@
+<app-top-navigation></app-top-navigation>
+<h1>Favourites</h1>
+<div class="product-container">
+  <app-product-card
+    *ngFor="let product of products | async"
+    [product]="product"
+    [isFavPage]="true"
+    (removeItem)="removeItem(product.id)"
+  >
+  </app-product-card>
+</div>
